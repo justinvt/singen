@@ -61,4 +61,6 @@ else
   puts "#{@app_filename} already exists"
 end
 
-system "mate #{@project_dir}"
+if File.exists?("/Applications/TextMate.app")
+  system "mate #{@project_dir}"
+end
