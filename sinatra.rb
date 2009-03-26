@@ -4,8 +4,11 @@ ROOT = IO.popen("echo $PWD").read.strip
 @directory   = ARGV[0]
 @project_dir = File.join(ROOT, @directory.to_s)
 @app_filename = "app.rb"
-required_gems = [:rubygems, :sinata, :data_mapper]
-directories   =  {@directory => [ :views, :models, :lib, {:public =>  [:javascripts, :css, {:images=>[ :icons ]}]  } ], :thing=>[:nag] }
+
+gems = [:rubygems, :sinata, :data_mapper]
+default_methods = [:boot]
+
+directories   =  { @directory => [:views, :models, :lib, {:public =>[:javascripts, :css, {:images=>[:icons]} ] } ] }
 
 def make_dir(path)
   path = path.to_s
@@ -50,8 +53,9 @@ Dir.chdir(@project_dir)
 
 unless File.exists?(@app_filename)
   f = File.open(@app_filename, "a")
-  required_gems.each{|g| f.puts "require \"#{g}\""}
+  gems.each{|g| f.puts "require \"#{g}\""}
   f.puts "\n"
+  default_methods.each{|m| f.puts "#{m}"}
   f.close
 else
   puts "#{@app_filename} already exists"
