@@ -5,7 +5,7 @@ ROOT = IO.popen("echo $PWD").read.strip
 @project_dir = File.join(ROOT, @directory.to_s)
 @app_filename = "app.rb"
 required_gems = [:rubygems, :sinata, :data_mapper]
-directories   =  {@directory => [ :views, :lib, {:public =>  [:javascripts, :css, {:images=>[:fuck, :you]}]  } ] }
+directories   =  {@directory => [ :views, :models, :lib, {:public =>  [:javascripts, :css, {:images=>[ :icons ]}]  } ], :thing=>[:nag] }
 
 def make_dir(path)
   path = path.to_s
