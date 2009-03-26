@@ -1,6 +1,7 @@
 #!/bin/bash
-export install_dir=/usr/local/bin/sinatra
-export script=singen.rb
+export name=singen
+export install_dir=/usr/local/bin/$name
+export script=$name.rb
 echo "Installing $script to $install_dir"
 cp $script $install_dir
 
