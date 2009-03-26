@@ -1,3 +1,6 @@
 #!/bin/bash
+export install_dir=/usr/local/bin/sinatra
+export script=sinatra.rb
+echo "Installing $script to $install\n"
 cp sinatra.rb /usr/local/bin/sinatra
 
