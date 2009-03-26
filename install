@@ -1,5 +1,5 @@
 #!/bin/bash
-export name=singen
+export name=sing
 export install_dir=/usr/local/bin/$name
 export script=$name.rb
 echo "Installing $script to $install_dir"
