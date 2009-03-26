@@ -55,7 +55,7 @@ unless File.exists?(@app_filename)
   f = File.open(@app_filename, "a")
   gems.each{|g| f.puts "require \"#{g}\""}
   f.puts "\n"
-  default_methods.each{|m| f.puts "#{m}"}
+  default_methods.each{|m| f.puts "#TODO -  #{m}"}
   f.close
 else
   puts "#{@app_filename} already exists"
