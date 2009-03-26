@@ -5,7 +5,7 @@ ROOT = IO.popen("echo $PWD").read.strip
 @project_dir = File.join(ROOT, @directory.to_s)
 @app_filename = "app.rb"
 
-gems = [:rubygems, :sinata, :data_mapper]
+gems = [:rubygems, :sinatra, :data_mapper]
 default_methods = [:boot]
 
 directories   =  { @directory => [:views, :models, :lib, {:public =>[:javascripts, :css, {:images=>[:icons]} ] } ] }
